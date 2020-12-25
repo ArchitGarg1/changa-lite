@@ -12,7 +12,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class ChangaLiteView extends ConstraintLayout {
 
-    WebView mWebView;
+    private ConstraintLayout constraintLayout;
+    private WebView mWebView;
     private String AppId = "f0626ff3-ba6b-41fc-a259-75ea2a661b6e";
 
     public ChangaLiteView(@NonNull Context context) {
@@ -40,11 +41,16 @@ public class ChangaLiteView extends ConstraintLayout {
         inflater.inflate(R.layout.layout_changa_lite, this);
 
         mWebView = findViewById(R.id.web_view);
+        constraintLayout = findViewById(R.id.layout);
         setContentInWebView();
     }
 
     public void setAppId(String AppId) {
         this.AppId = AppId;
+    }
+
+    public void setParam() {
+//        constraintLayout.setBackgroundColor(R.attr.param1);
     }
 
     private void setContentInWebView() {
