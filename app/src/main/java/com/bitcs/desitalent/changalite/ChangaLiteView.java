@@ -14,7 +14,7 @@ public class ChangaLiteView extends ConstraintLayout {
 
     private ConstraintLayout constraintLayout;
     private WebView mWebView;
-    private String AppId = "f0626ff3-ba6b-41fc-a259-75ea2a661b6e";
+    private String AppId;
 
     public ChangaLiteView(@NonNull Context context) {
         super(context);
@@ -40,8 +40,6 @@ public class ChangaLiteView extends ConstraintLayout {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.layout_changa_lite, this);
 
-        mWebView = findViewById(R.id.web_view);
-        constraintLayout = findViewById(R.id.layout);
         setContentInWebView();
     }
 
@@ -54,6 +52,9 @@ public class ChangaLiteView extends ConstraintLayout {
     }
 
     private void setContentInWebView() {
+//        AppId = "f0626ff3-ba6b-41fc-a259-75ea2a661b6e";
+        mWebView = findViewById(R.id.web_view);
+        constraintLayout = findViewById(R.id.layout);
         String html = "<html><body><div id='changa-slider' appid=" + AppId + "></div> <script src='https://www.changa.in/assets/js/changa-lite.js'></script></body></html>";
         mWebView.loadData(html, "text/html", "UTF-8");
         mWebView.setWebViewClient(new MyBrowser());
