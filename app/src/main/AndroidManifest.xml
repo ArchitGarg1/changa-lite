@@ -1,3 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.bitcs.desitalent.changalite" >
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bitcs.desitalent.changalite">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/changa_icon"
+        android:label="Changa Lite Demo"
+        android:roundIcon="@drawable/changa_icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ChangaLite">
+        <activity android:name=".demo.DemoActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
 </manifest>
