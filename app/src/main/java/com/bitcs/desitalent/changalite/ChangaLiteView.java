@@ -45,6 +45,7 @@ public class ChangaLiteView extends ConstraintLayout {
 
     public void setAppId(String AppId) {
         this.AppId = AppId;
+        setContentInWebView();
     }
 
     public void setParam() {
