@@ -48,9 +48,16 @@ public class ChangaLiteView extends ConstraintLayout {
         setContentInWebView();
     }
 
-    public void setParam() {
-//        constraintLayout.setBackgroundColor(R.attr.param1);
+    @Override
+    public void setBackgroundColor(int color) {
+        if (mWebView != null) {
+            mWebView.setBackgroundColor(color);
+        }
     }
+
+//    public void setParam() {
+//        constraintLayout.setBackgroundColor(R.attr.param1);
+//    }
 
     private void setContentInWebView() {
 //        AppId = "f0626ff3-ba6b-41fc-a259-75ea2a661b6e";
