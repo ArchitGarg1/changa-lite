@@ -10,6 +10,7 @@
         android:label="Changa Lite Demo"
         android:roundIcon="@drawable/changa_icon"
         android:supportsRtl="true"
+        android:hardwareAccelerated="true"
         android:theme="@style/Theme.ChangaLite">
         <activity android:name=".demo.DemoActivity">
             <intent-filter>

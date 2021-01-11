@@ -38,7 +38,7 @@ public class ChangaLiteView extends ConstraintLayout {
 
     private void init(Context context) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.layout_changa_lite_native, this);
+        inflater.inflate(R.layout.layout_changa_lite, this);
 
         setContentInWebView();
     }
