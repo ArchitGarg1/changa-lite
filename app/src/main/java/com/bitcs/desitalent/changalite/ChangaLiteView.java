@@ -1,7 +1,6 @@
 package com.bitcs.desitalent.changalite;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.webkit.WebView;
@@ -39,7 +38,7 @@ public class ChangaLiteView extends ConstraintLayout {
 
     private void init(Context context) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.layout_changa_lite_web_view, this);
+        inflater.inflate(R.layout.layout_changa_lite_native, this);
 
         setContentInWebView();
     }
@@ -51,7 +50,9 @@ public class ChangaLiteView extends ConstraintLayout {
 
     @Override
     public void setBackgroundColor(int color) {
-        mWebView.setBackgroundColor(color);
+        if (mWebView != null) {
+            mWebView.setBackgroundColor(color);
+        }
     }
 
 //    public void setParam() {
@@ -60,8 +61,8 @@ public class ChangaLiteView extends ConstraintLayout {
 
     private void setContentInWebView() {
 //        AppId = "f0626ff3-ba6b-41fc-a259-75ea2a661b6e";
-        constraintLayout = findViewById(R.id.layout);
         mWebView = findViewById(R.id.web_view);
+        constraintLayout = findViewById(R.id.layout);
         String html = "<html><body><div id='changa-slider' appid=" + AppId + "></div> <script src='https://www.changa.in/assets/js/changa-lite.js'></script></body></html>";
         mWebView.loadData(html, "text/html", "UTF-8");
         mWebView.setWebViewClient(new MyBrowser());
