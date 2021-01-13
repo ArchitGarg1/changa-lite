@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
     tools:context=".ChangaLiteView">
 
-    <WebView
-        android:id="@+id/web_view"
+    <ImageView
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/transparent"/>
+        android:src="@drawable/changa_play"
+        android:padding="10dp"
+        android:scaleType="fitCenter"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
