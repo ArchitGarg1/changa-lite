@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -81,32 +80,15 @@ public class ChangaLiteView extends ConstraintLayout {
 //        constraintLayout.setBackgroundColor(R.attr.param1);
 //    }
 
-    private static class MyBrowser extends WebViewClient {
-        @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            view.loadUrl(url);
-            return true;
-        }
-    }
-
     private void launchPopup() {
         WebView mWebView = new WebView(getContext());
         WebSettings settings = mWebView.getSettings();
-//        String html = "<html><body><div id='changa-slider' appid=" + AppId + " slider-type='vertical'></div> <script src='https://changa-lite-app.surge.sh/main.js'></script></body></html>";
-//        mWebView.loadData(html, "text/html", "UTF-8");
-        mWebView.loadUrl("https://changa-lite-app.surge.sh/?appid="+AppId);
-        mWebView.setWebViewClient(new MyBrowser());
+        mWebView.loadUrl("https://changa-lite-app.surge.sh/?appid=" + AppId);
         mWebView.setVerticalScrollBarEnabled(false);
         mWebView.setHorizontalScrollBarEnabled(false);
         mWebView.setBackgroundColor(Color.BLACK);
-        settings.setPluginState(WebSettings.PluginState.ON);
         settings.setLoadsImagesAutomatically(true);
         settings.setJavaScriptEnabled(true);
-        settings.setDomStorageEnabled(true);
-        settings.setAllowContentAccess(true);
-        settings.setLoadWithOverviewMode(true);
-        settings.setRenderPriority(WebSettings.RenderPriority.HIGH);
-        settings.setUseWideViewPort(false);     // to switch in desktop and mobile site
 
         RelativeLayout.LayoutParams paramsWebView = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
         Dialog dialog = new Dialog(getContext(), android.R.style.Theme_Black_NoTitleBar_Fullscreen);
