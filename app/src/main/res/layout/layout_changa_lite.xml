@@ -14,6 +14,7 @@
         android:minHeight="30dp"
         android:padding="5dp"
         android:src="@drawable/changa_play"
-        android:scaleType="fitCenter"/>
+        android:scaleType="fitCenter"
+        android:contentDescription="@string/app_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
