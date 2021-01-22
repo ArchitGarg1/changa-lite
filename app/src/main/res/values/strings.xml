@@ -1,4 +1,5 @@
 <resources>
+    <string name="app_name">Changa Lite</string>
     <string name="app_name">ChangaLite</string>
     <string name="arrow">arrow</string>
     <string name="caption">Add Changa Lite to your app</string>
